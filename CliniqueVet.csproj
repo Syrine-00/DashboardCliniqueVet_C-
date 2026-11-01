@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CliniqueVet</RootNamespace>
+    <AssemblyName>CliniqueVet</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <!-- Lock to C# 7.3 — compatible with .NET 4.8 / VS 2017-2022 -->
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="CliniqueVet.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CliniqueVet_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CreateDatabase.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAnimaux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnimaux.Designer.cs">
+      <DependentUpon>FormAnimaux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAnimauxAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnimauxAdmin.Designer.cs">
+      <DependentUpon>FormAnimauxAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultation.Designer.cs">
+      <DependentUpon>FormConsultation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFacture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFacture.Designer.cs">
+      <DependentUpon>FormFacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactureAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactureAdmin.Designer.cs">
+      <DependentUpon>FormFactureAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedicAdmin.Designer.cs">
+      <DependentUpon>FormMedicAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedicament.Designer.cs">
+      <DependentUpon>FormMedicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOuvrirConsultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOuvrirConsultation.Designer.cs">
+      <DependentUpon>FormOuvrirConsultation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlanning.Designer.cs">
+      <DependentUpon>FormPlanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProprio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProprio.Designer.cs">
+      <DependentUpon>FormProprio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRDV.Designer.cs">
+      <DependentUpon>FormRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUtilisateurs.Designer.cs">
+      <DependentUpon>FormUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVaccination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVaccination.Designer.cs">
+      <DependentUpon>FormVaccination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormAnimaux.resx">
+      <DependentUpon>FormAnimaux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnimauxAdmin.resx">
+      <DependentUpon>FormAnimauxAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultation.resx">
+      <DependentUpon>FormConsultation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFacture.resx">
+      <DependentUpon>FormFacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFactureAdmin.resx">
+      <DependentUpon>FormFactureAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicAdmin.resx">
+      <DependentUpon>FormMedicAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicament.resx">
+      <DependentUpon>FormMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOuvrirConsultation.resx">
+      <DependentUpon>FormOuvrirConsultation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlanning.resx">
+      <DependentUpon>FormPlanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProprio.resx">
+      <DependentUpon>FormProprio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRDV.resx">
+      <DependentUpon>FormRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUtilisateurs.resx">
+      <DependentUpon>FormUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVaccination.resx">
+      <DependentUpon>FormVaccination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
